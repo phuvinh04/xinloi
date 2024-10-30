@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xin Lỗi Em Yêu ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f1f1;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 500px;
+        }
+        h1 {
+            color: #e63946;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background-color: #d62828;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Xin lỗi em yêu ❤️</h1>
+        <p>Anh biết mình đã sai. Em có thể tha lỗi cho anh không?moaaa
+        
+        </p>
+        <div class="buttons">
+            <button class="button" onclick="showMessage()">Tha Lỗi</button>
+            <button class="button" id="noButton" onclick="moveButton()">Không</button>
+        </div>
+        <p id="message">Cảm ơn em đã tha lỗi cho anh! chụt chụt❤️</p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+
+        function moveButton() {
+            const button = document.getElementById('noButton');
+            const container = document.querySelector('.container');
+            
+            // Tạo vị trí ngẫu nhiên trong khung giới hạn của container
+            const maxX = container.offsetWidth - button.offsetWidth;
+            const maxY = container.offsetHeight - button.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            // Áp dụng vị trí mới cho nút "Không"
+            button.style.position = 'absolute';
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
